@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBG Car Rentals</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+        <div class="logo">RBG Car Rentals</div>
+
+        <!-- Hidden checkbox toggles on the menu -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <!-- Hamburger icon label-->
+        <label for="nav-toggle" class="hamburger">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Video Background -->
+  <section id="hero">
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="assets/bg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to RBG Car Rentals</h1>
+      <p>Davao's Best Car Rental Agency.</p>
+      <a href="#features" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2>Our Features</h2>
+    <div class="feature-container">
+      <div class="feature">
+        <h3>Feature One</h3>
+        <p>Short description of feature one.</p>
+      </div>
+      <div class="feature">
+        <h3>Feature Two</h3>
+        <p>Short description of feature two.</p>
+      </div>
+      <div class="feature">
+        <h3>Feature Three</h3>
+        <p>Short description of feature three.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>This section provides background information about your site or company.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 RBG Car Rentals. All Rights Reserved.</p>
+  </footer>
+  
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-to-top">&#8679;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
