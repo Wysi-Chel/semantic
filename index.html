@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RBG Car Rentals</title>
   <link rel="stylesheet" href="styles.css" />
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "rkUW0wjZvrcPAFXWz",
+        });
+    })();
+  </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -67,11 +77,11 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+      <input id="name" type="text" name="name" placeholder="Your Name" required />
+      <input id="email" type="email" name="email" placeholder="Your Email" required />
+      <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" onclick="sendMail()">Send Message</button>
+    </form>    
   </section>
 
   <!-- Footer -->
@@ -82,6 +92,14 @@
   <!-- Scroll to top button -->
   <button id="scroll-to-top" class="scroll-to-top">&#8679;</button>
 
-  <script src="script.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/sdk/latest/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init('rkUW0wjZvrcPAFXWz'); // Replace with your EmailJS Public Key
+      })();
+    </script>
+    <script src="script.js"></script>
+
 </body>
 </html>

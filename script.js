@@ -70,3 +70,30 @@ const hamburger = document.querySelector('.hamburger');
 hamburger.addEventListener('click', () => {
     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 });
+
+//send email function
+function sendMail() {
+    let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value,
+    }
+    emailjs.send("service_d8nu43o", "template_93qxbww", parms).then(alert("Email sent! "))
+}
+
+// // Send email function
+// document.getElementById('contact-form').addEventListener('submit', function(event) {
+//     event.preventDefault();
+  
+//     const serviceID = 'service_d8nu43o';
+//     const templateID = 'template_ns0kjho';
+  
+//     emailjs.sendForm(serviceID, 'template_ns0kjho', this)
+//       .then(() => {
+//         alert('Your message was sent successfully!');
+//         this.reset();
+//       }, (error) => {
+//         alert('FAILED... ' + JSON.stringify(error));
+//       });
+//   });
+  
