@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RBG Car Rentals</title>
   <link rel="stylesheet" href="styles.css" />
+
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
@@ -31,6 +32,8 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><div id="currentTime" class="time"></div></li>
+            <li><button class="btn" onclick="toggleDarkMode()">Dark Mode</button></li>
         </ul>
     </nav>
   </header>
@@ -43,7 +46,7 @@
     </video>
     <div class="hero-content">
       <h1>Welcome to RBG Car Rentals</h1>
-      <p>Davao's Best Car Rental Agency.</p>
+      <p style="margin-bottom: 30px;">Davao's Best Car Rental Agency.</p>
       <a href="#features" class="btn">Learn More</a>
     </div>
   </section>
@@ -66,6 +69,74 @@
       </div>
     </div>
   </section>
+
+  <!-- Car Showcase Section -->
+<section id="car-showcase">
+  <h2>Car Fleet</h2>
+  <div class="filter">
+    <label for="car-filter">Filter by Type:</label>
+    <select id="car-filter">
+      <option value="all">All</option>
+      <option value="sedan">Sedan</option>
+      <option value="suv">SUV</option>
+      <option value="truck">Truck</option>
+    </select>
+  </div>
+  <div class="carousel">
+    <button class="prev">&#10094;</button>
+    <div class="carousel-track-container">
+      <ul class="carousel-track">
+        <li class="carousel-slide" data-type="sedan">
+          <img src="assets/sedan.jpg" alt="Sedan Car">
+          <div class="car-info">
+            <h3>Sedan Model A</h3>
+            <p>Price: $50/day</p>
+          </div>
+        </li>
+        <li class="carousel-slide" data-type="suv">
+          <img src="assets/suv.jpg" alt="SUV Car">
+          <div class="car-info">
+            <h3>SUV Model B</h3>
+            <p>Price: $70/day</p>
+          </div>
+        </li>
+        <li class="carousel-slide" data-type="truck">
+          <img src="assets/truck.jpg" alt="Truck Car">
+          <div class="car-info">
+            <h3>Truck Model C</h3>
+            <p>Price: $80/day</p>
+          </div>
+        </li>
+        <!-- Add more slides as needed -->
+      </ul>
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section id="booking">
+  <h2>Book Your Rental Car</h2>
+  <form id="booking-form">
+    <label for="pickup-date">Pick-up Date:</label>
+    <input type="date" id="pickup-date" name="pickup-date" required>
+
+    <label for="dropoff-date">Drop-off Date:</label>
+    <input type="date" id="dropoff-date" name="dropoff-date" required>
+
+    <label for="car-select">Choose Car:</label>
+    <select id="car-select" required>
+      <option value="sedan" data-price="50">Sedan Model A - $50/day</option>
+      <option value="suv" data-price="70">SUV Model B - $70/day</option>
+      <option value="truck" data-price="80">Truck Model C - $80/day</option>
+    </select>
+
+    <div class="price-display">
+      Total Price: $<span id="total-price">0</span>
+    </div>
+    <button type="submit">Reserve Now</button>
+  </form>
+</section>
 
   <!-- About Section -->
   <section id="about">
@@ -92,14 +163,7 @@
   <!-- Scroll to top button -->
   <button id="scroll-to-top" class="scroll-to-top">&#8679;</button>
 
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/sdk/latest/email.min.js"></script>
-    <script>
-      (function(){
-        emailjs.init('rkUW0wjZvrcPAFXWz'); // Replace with your EmailJS Public Key
-      })();
-    </script>
     <script src="script.js"></script>
 
-</body>
+</body> 
 </html>
